@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Monika Sharma | Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Monika Sharma — Full-Stack Developer in Kota,India with 3 years building business applications, React interfaces, REST APIs, workflow automation and AI-powered solutions with React, Node.js and MongoDB."
+    />
+    <meta name="author" content="Monika Sharma" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph / social preview. Replace the URL with your deployed address. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Monika Sharma | Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer building scalable web applications with React, Node.js, MongoDB and modern AI technologies."
+    />
+    <meta property="og:image" content="assets/images/og-image.png" />
+    <meta property="og:url" content="https://your-portfolio-url.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apply the saved theme before first paint so there is no flash. -->
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark")
+          document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Page loader -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <span class="loader__mark">MS</span>
+      <span class="loader__bar"><span></span></span>
+    </div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="nav" id="nav">
+      <div class="container nav__inner">
+        <a
+          href="#home"
+          class="nav__brand"
+          aria-label="Monika Sharma, back to top"
+        >
+          <span class="nav__mark">MS</span>
+          <span class="nav__name">Monika Sharma</span>
+        </a>
+
+        <nav class="nav__menu" id="nav-menu" aria-label="Primary">
+          <ul class="nav__links">
+            <li><a href="#home" class="nav__link">Home</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#experience" class="nav__link">Experience</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#achievements" class="nav__link">Achievements</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+          <div class="nav__social nav__social--mobile">
+            <a
+              href="https://github.com/monikasharma2204"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--ghost btn--sm"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/monika-sharmaa/"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--ghost btn--sm"
+              >LinkedIn</a
+            >
+          </div>
+        </nav>
+
+        <div class="nav__actions">
+          <a
+            href="https://github.com/monikasharma2204"
+            target="_blank"
+            rel="noopener"
+            class="icon-btn nav__icon"
+            aria-label="GitHub profile (opens in new tab)"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.82 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/monika-sharmaa/"
+            target="_blank"
+            rel="noopener"
+            class="icon-btn nav__icon"
+            aria-label="LinkedIn profile (opens in new tab)"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"
+              />
+            </svg>
+          </a>
+          <button
+            class="icon-btn theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light theme"
+          >
+            <svg
+              class="theme-toggle__sun"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="4.2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+              <g
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              >
+                <path
+                  d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"
+                />
+              </g>
+            </svg>
+            <svg
+              class="theme-toggle__moon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+                d="M20.4 14.6A8.6 8.6 0 0 1 9.4 3.6a8.6 8.6 0 1 0 11 11Z"
+              />
+            </svg>
+          </button>
+          <button
+            class="icon-btn nav__toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+          >
+            <span class="burger"><span></span><span></span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="home" aria-label="Introduction">
+        <canvas
+          class="hero__canvas"
+          id="hero-canvas"
+          aria-hidden="true"
+        ></canvas>
+        <div class="hero__grid" aria-hidden="true"></div>
+
+        <div class="container hero__inner">
+          <div class="hero__main">
+            <!-- Availability: edit the text or remove this <p> entirely in one place. -->
+            <p class="status hero-anim" style="--d: 0">
+              <span class="status__dot" aria-hidden="true"></span>
+              <span>Open to opportunities</span>
+            </p>
+
+            <h1 class="hero__name hero-anim" style="--d: 1">Monika Sharma</h1>
+
+            <p class="hero__role hero-anim" style="--d: 2">
+              Full-Stack Developer
+              <span class="hero__stack"
+                >React.js <i>•</i> Node.js <i>•</i> MongoDB <i>•</i> AI</span
+              >
+            </p>
+
+            <p class="hero__lead hero-anim" style="--d: 3">
+              Building scalable web applications with React, Node.js, MongoDB
+              and modern AI technologies.
+            </p>
+
+            <p class="hero__support hero-anim" style="--d: 4">
+              Full-Stack Developer with 3 years of experience building business
+              applications, responsive React interfaces, REST APIs, workflow
+              automation and AI-powered solutions.
+            </p>
+
+            <div class="hero__ctas">
+              <a
+                href="#projects"
+                class="btn btn--primary hero-anim"
+                style="--d: 5"
+              >
+                View My Work
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14M13 6l6 6-6 6"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="btn btn--outline hero-anim"
+                style="--d: 6"
+                data-resume
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"
+                  />
+                </svg>
+                Download Resume
+              </a>
+            </div>
+
+            <ul class="hero__social" aria-label="Profiles">
+              <li class="hero-anim" style="--d: 7">
+                <a
+                  href="https://github.com/monikasharma2204"
+                  target="_blank"
+                  rel="noopener"
+                  class="chip-link"
+                  >GitHub <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li class="hero-anim" style="--d: 7.5">
+                <a
+                  href="https://www.linkedin.com/in/monika-sharmaa/"
+                  target="_blank"
+                  rel="noopener"
+                  class="chip-link"
+                  >LinkedIn <span aria-hidden="true">↗</span></a
+                >
+              </li>
+              <li class="hero-anim" style="--d: 8">
+                <a href="mailto:monika779803@gmail.com" class="chip-link"
+                  >Email <span aria-hidden="true">↗</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Portrait. To change the photo, replace assets/images/monika-sharma.jpg/.webp (4:5 ratio works best). -->
+          <figure class="portrait hero-anim" style="--d: 4">
+            <div class="portrait__frame">
+              <picture>
+                <source
+                  srcset="assets/images/monika-sharma.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/images/monika-sharma.jpg"
+                  width="800"
+                  height="1000"
+                  alt="Portrait of Monika Sharma, Full-Stack Developer"
+                  fetchpriority="high"
+                />
+              </picture>
+            </div>
+            <figcaption class="portrait__caption">
+              <span>Monika Sharma</span>
+              <span>Kota,India</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <a
+          href="#about"
+          class="hero__scroll"
+          aria-label="Scroll to About section"
+        >
+          <span></span>
+        </a>
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__index">01</span>
+            <h2 class="section__title" id="about-title">About Me</h2>
+          </header>
+
+          <div class="about">
+            <div class="about__text reveal">
+              <p class="about__lead">
+                I'm a Full-Stack Developer who builds scalable web applications
+                and the business workflows behind them.
+              </p>
+              <p>
+                Most of my work lives where product meets operations — sales,
+                quotations, memos, CRM, inventory and reporting — with
+                role-based access control keeping the right data in front of the
+                right people. I work mainly with JavaScript, React.js, Redux,
+                Recoil and Node.js on MongoDB and REST APIs, style with Tailwind
+                CSS and Material UI, and build AI features with OpenAI APIs and
+                LangChain.
+              </p>
+              <p>
+                I enjoy solving real-world problems and care about code that
+                stays clean, maintainable and pleasant to use.
+              </p>
+            </div>
+
+            <div class="about__side">
+              <!-- Second photo. Replace assets/images/monika-sharma-casual.jpg/.webp to change it. -->
+              <figure class="about__photo reveal">
+                <picture>
+                  <source
+                    srcset="assets/images/monika-sharma-casual.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="assets/images/monika-sharma-casual.jpg"
+                    width="720"
+                    height="900"
+                    loading="lazy"
+                    alt="Monika Sharma smiling in front of an orange wall"
+                  />
+                </picture>
+              </figure>
+
+              <article class="card edu reveal" aria-labelledby="edu-title">
+                <p class="eyebrow">Education</p>
+                <h3 class="edu__degree" id="edu-title">
+                  B.Sc. Computer Science
+                </h3>
+                <p class="edu__school">Banasthali Vidyapith</p>
+                <div class="edu__meta">
+                  <span>2020 – 2023</span>
+                  <span class="edu__cgpa">CGPA 8.7</span>
+                </div>
+              </article>
+
+              <article class="card reveal">
+                <p class="eyebrow">Workflows I've built for</p>
+                <ul class="tag-list">
+                  <li>Sales</li>
+                  <li>Quotations</li>
+                  <li>Memo</li>
+                  <li>CRM</li>
+                  <li>Inventory</li>
+                  <li>Reporting</li>
+                  <li>RBAC</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__index">02</span>
+            <h2 class="section__title" id="skills-title">Skills</h2>
+            <p class="section__sub">
+              The tools I reach for, grouped by where they sit in the stack.
+            </p>
+          </header>
+
+          <div class="skills">
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>Frontend</span></h3>
+              <ul class="chips">
+                <li>JavaScript</li>
+                <li>React.js</li>
+                <li>Redux</li>
+                <li>Recoil</li>
+                <li>Tailwind CSS</li>
+                <li>Material UI</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </article>
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>Backend</span></h3>
+              <ul class="chips">
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>REST APIs</li>
+                <li>JWT</li>
+                <li>Microservices</li>
+              </ul>
+            </article>
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>AI</span></h3>
+              <ul class="chips">
+                <li>OpenAI APIs</li>
+                <li>LangChain</li>
+                <li>RAG</li>
+              </ul>
+            </article>
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>Database</span></h3>
+              <ul class="chips">
+                <li>MongoDB</li>
+                <li>DBMS</li>
+              </ul>
+            </article>
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>Programming</span></h3>
+              <ul class="chips">
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+              </ul>
+            </article>
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>Concepts</span></h3>
+              <ul class="chips">
+                <li>Data Structures &amp; Algorithms</li>
+                <li>OOP</li>
+                <li>REST APIs</li>
+                <li>Authentication</li>
+                <li>RBAC</li>
+              </ul>
+            </article>
+            <article class="card skill-group reveal">
+              <h3 class="skill-group__title"><span>Tools</span></h3>
+              <ul class="chips">
+                <li>Git</li>
+                <li>GitHub</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="section" id="experience" aria-labelledby="exp-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__index">03</span>
+            <h2 class="section__title" id="exp-title">Experience</h2>
+          </header>
+
+          <ol class="timeline">
+            <!-- Tiara Software -->
+            <li class="timeline__item reveal">
+              <div class="timeline__meta">
+                <p class="timeline__date">Jul 2024 — Jul 2026</p>
+                <p class="timeline__place">Kota,India</p>
+              </div>
+              <article class="card job">
+                <header class="job__head">
+                  <h3 class="job__role">Full-Stack Developer</h3>
+                  <p class="job__company">Tiara Software</p>
+                </header>
+
+                <ul class="metrics" aria-label="Impact">
+                  <li>
+                    <strong>20%</strong
+                    ><span>backend processing efficiency gain</span>
+                  </li>
+                  <li>
+                    <strong>25%</strong
+                    ><span>less manual stock-management effort</span>
+                  </li>
+                  <li>
+                    <strong>40%</strong
+                    ><span>less manual documentation effort</span>
+                  </li>
+                  <li>
+                    <strong>30+</strong><span>production issues resolved</span>
+                  </li>
+                </ul>
+
+                <ul class="job__points">
+                  <li>
+                    Worked on complex GMS business workflows across 8+ modules,
+                    including Sales, Quotations, Memo, CRM and Inventory.
+                  </li>
+                  <li>
+                    Built features end to end with React.js, Recoil, Node.js,
+                    MongoDB and REST APIs.
+                  </li>
+                  <li>
+                    Automated PDF and report generation with Puppeteer and
+                    Handlebars.
+                  </li>
+                </ul>
+                <div class="job__more" id="tiara-more" hidden>
+                  <ul class="job__points">
+                    <li>
+                      Worked with role-based access control (RBAC) across
+                      business modules.
+                    </li>
+                    <li>
+                      Handled production support, resolving 30+ production
+                      issues.
+                    </li>
+                  </ul>
+                </div>
+                <button
+                  class="link-btn job__toggle"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="tiara-more"
+                >
+                  <span>View more</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      d="m6 9 6 6 6-6"
+                    />
+                  </svg>
+                </button>
+
+                <ul class="tags" aria-label="Technologies">
+                  <li>React.js</li>
+                  <li>Node.js</li>
+                  <li>MongoDB</li>
+                  <li>Recoil</li>
+                  <li>REST APIs</li>
+                  <li>RBAC</li>
+                  <li>Puppeteer</li>
+                  <li>Handlebars</li>
+                </ul>
+              </article>
+            </li>
+
+            <!-- Aeronpay -->
+            <li class="timeline__item reveal">
+              <div class="timeline__meta">
+                <p class="timeline__date">Jan 2024 — Jun 2024</p>
+                <p class="timeline__place">Kota,India</p>
+              </div>
+              <article class="card job">
+                <header class="job__head">
+                  <h3 class="job__role">Frontend Developer</h3>
+                  <p class="job__company">Aeronpay</p>
+                </header>
+                <ul class="metrics metrics--single" aria-label="Impact">
+                  <li>
+                    <strong>25%</strong
+                    ><span>reduction in UI-related issues</span>
+                  </li>
+                </ul>
+                <ul class="job__points">
+                  <li>
+                    Built responsive React.js interfaces for financial service
+                    workflows.
+                  </li>
+                  <li>
+                    Integrated REST APIs into form-driven workflows with
+                    validation and error handling.
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Technologies">
+                  <li>React.js</li>
+                  <li>REST APIs</li>
+                  <li>Form validation</li>
+                  <li>Responsive UI</li>
+                </ul>
+              </article>
+            </li>
+
+            <!-- Snive -->
+            <li class="timeline__item reveal">
+              <div class="timeline__meta">
+                <p class="timeline__date">Jun 2023 — Aug 2023</p>
+                <p class="timeline__place">Bengaluru, India</p>
+              </div>
+              <article class="card job">
+                <header class="job__head">
+                  <h3 class="job__role">Software Engineer Intern</h3>
+                  <p class="job__company">Snive</p>
+                </header>
+                <ul class="job__points">
+                  <li>
+                    Built AI-powered web interfaces with React.js, TypeScript
+                    and CSS.
+                  </li>
+                  <li>
+                    Integrated AI models for image generation and image
+                    segmentation features.
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Technologies">
+                  <li>React.js</li>
+                  <li>TypeScript</li>
+                  <li>CSS</li>
+                  <li>AI model integration</li>
+                </ul>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__index">04</span>
+            <h2 class="section__title" id="projects-title">Projects</h2>
+            <p class="section__sub">Live products, built end to end.</p>
+          </header>
+
+          <div class="projects">
+            <!-- ===== Project 1: EATWANA =====
+               Links are set in js/script.js → PROJECT_LINKS.LIVE_PROJECT_1_URL / GITHUB_PROJECT_1_URL
+               Screenshots: add image paths to data-shots (comma separated), e.g.
+               data-shots="assets/images/eatwana-1.png, assets/images/eatwana-2.png" -->
+            <article
+              class="project reveal"
+              data-shots="assets/images/eatwana-home.webp"
+            >
+              <div class="project__media">
+                <div class="mock" aria-hidden="true">
+                  <div class="mock__bar">
+                    <span></span><span></span><span></span><em>eatwana</em>
+                  </div>
+                  <div class="mock__body">
+                    <div class="mock__side"><i></i><i></i><i></i><i></i></div>
+                    <div class="mock__main">
+                      <div class="mock__row mock__row--title"></div>
+                      <div class="mock__cards"><b></b><b></b><b></b></div>
+                      <div class="mock__row"></div>
+                      <div class="mock__row mock__row--short"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery" hidden></div>
+              </div>
+
+              <div class="project__body">
+                <p class="eyebrow">Live project · 01</p>
+                <h3 class="project__title">EATWANA</h3>
+                <p class="project__tagline">
+                  Digital Tiffin &amp; Meal Ordering Platform
+                </p>
+                <p class="project__desc">
+                  A full-stack tiffin and cloud-kitchen platform supporting menu
+                  browsing, weekly tiffin plans, cart and checkout, UPI/COD
+                  payments, order tracking and subscriptions.
+                </p>
+
+                <div class="project__features">
+                  <div>
+                    <p class="project__label">For customers</p>
+                    <ul>
+                      <li>User authentication</li>
+                      <li>Menu browsing</li>
+                      <li>Weekly tiffin plans</li>
+                      <li>Cart &amp; checkout</li>
+                      <li>Payments</li>
+                      <li>Order tracking</li>
+                      <li>Recurring subscriptions</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="project__label">For the business</p>
+                    <ul>
+                      <li>Role-based access</li>
+                      <li>Admin dashboard</li>
+                      <li>Customer management</li>
+                      <li>Delivery tracking</li>
+                      <li>Business analytics</li>
+                      <li>PDF invoice generation</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <ul class="tags" aria-label="Tech stack">
+                  <li>React</li>
+                  <li>Redux Toolkit</li>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>MongoDB</li>
+                  <li>JWT</li>
+                </ul>
+
+                <div class="project__actions">
+                  <a
+                    class="btn btn--primary btn--sm"
+                    data-link="LIVE_PROJECT_1_URL"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Live Demo
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 17 17 7M9 7h8v8"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="btn btn--outline btn--sm"
+                    data-link="GITHUB_PROJECT_1_URL"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- ===== Project 2: FUNDLAB =====
+               Links: js/script.js → PROJECT_LINKS.LIVE_PROJECT_2_URL / GITHUB_PROJECT_2_URL -->
+            <article
+              class="project project--reverse reveal"
+              data-shots="assets/images/fundlab-home.webp"
+            >
+              <div class="project__media">
+                <div class="mock mock--alt" aria-hidden="true">
+                  <div class="mock__bar">
+                    <span></span><span></span><span></span><em>fundlab</em>
+                  </div>
+                  <div class="mock__body">
+                    <div class="mock__main">
+                      <div class="mock__row mock__row--title"></div>
+                      <div class="mock__chart">
+                        <b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+                      </div>
+                      <div class="mock__row"></div>
+                      <div class="mock__row mock__row--short"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="gallery" hidden></div>
+              </div>
+
+              <div class="project__body">
+                <p class="eyebrow">Live project · 02</p>
+                <h3 class="project__title">FundLab</h3>
+                <p class="project__tagline">Classroom Mutual-Fund Simulator</p>
+                <p class="project__desc">
+                  Real funds, virtual money. Every student gets the same virtual
+                  corpus to invest in real Indian mutual funds at their
+                  published NAVs, explains each decision, and sees what the
+                  market actually does — while the teacher sees how the whole
+                  class is deciding.
+                </p>
+
+                <div class="project__features">
+                  <div>
+                    <p class="project__label">For students</p>
+                    <ul>
+                      <li>Explore 16 real mutual funds</li>
+                      <li>Buy &amp; sell units</li>
+                      <li>Portfolio tracking</li>
+                      <li>Investment reasoning</li>
+                      <li>Trade history &amp; CSV export</li>
+                      <li>NAV charts &amp; returns</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p class="project__label">For teachers</p>
+                    <ul>
+                      <li>Class &amp; student management</li>
+                      <li>Leaderboard &amp; portfolio analytics</li>
+                      <li>Behavioral nudges</li>
+                      <li>AI-powered class summary</li>
+                      <li>Student activity tracking</li>
+                      <li>Read-only MCP assistant</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Tech stack: confirm/edit these tags -->
+                <ul class="tags" aria-label="Tech stack">
+                  <li>React</li>
+                  <li>NestJS</li>
+                  <li>Prisma</li>
+                  <li>PostgreSQL</li>
+                  <li>MCP</li>
+                </ul>
+
+                <div class="project__actions">
+                  <a
+                    class="btn btn--primary btn--sm"
+                    data-link="LIVE_PROJECT_2_URL"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Live Demo
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 17 17 7M9 7h8v8"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="btn btn--outline btn--sm"
+                    data-link="GITHUB_PROJECT_2_URL"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ACHIEVEMENTS ============ -->
+      <section class="section" id="achievements" aria-labelledby="ach-title">
+        <div class="container">
+          <header class="section__head reveal">
+            <span class="section__index">05</span>
+            <h2 class="section__title" id="ach-title">Achievements</h2>
+          </header>
+
+          <div class="achievements">
+            <article class="card stat reveal">
+              <p class="stat__num"><span data-count="2">2</span>+</p>
+              <h3 class="stat__label">Rounds cleared</h3>
+              <p class="stat__desc">Flipkart GRID Hackathon</p>
+            </article>
+            <article class="card stat reveal">
+              <p class="stat__num">
+                <small>Top</small> <span data-count="300">300</span>
+              </p>
+              <h3 class="stat__label">Women's India Hackathon</h3>
+              <p class="stat__desc">Ranked in the Top 300</p>
+            </article>
+            <article class="card stat reveal">
+              <p class="stat__num"><span data-count="400">400</span>+</p>
+              <h3 class="stat__label">LeetCode problems</h3>
+              <p class="stat__desc">Solved on LeetCode</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section
+        class="section section--contact"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact">
+          <div class="contact__intro reveal">
+            <span class="section__index">06</span>
+            <h2 class="contact__title" id="contact-title">
+              Let's Build Something Together.
+            </h2>
+            <p class="contact__text">
+              I'm always interested in discussing interesting projects,
+              full-stack development opportunities and innovative ideas.
+            </p>
+
+            <ul class="contact__list">
+              <li>
+                <span class="contact__key">Email</span>
+                <a href="mailto:monika779803@gmail.com"
+                  >monika779803@gmail.com</a
+                >
+                <button
+                  class="copy-btn"
+                  type="button"
+                  data-copy="monika779803@gmail.com"
+                  aria-label="Copy email address"
+                >
+                  Copy
+                </button>
+              </li>
+              <li>
+                <span class="contact__key">Phone</span>
+                <a href="tel:+919785965800">+91 97859 65800</a>
+              </li>
+              <li>
+                <span class="contact__key">GitHub</span>
+                <a
+                  href="https://github.com/monikasharma2204"
+                  target="_blank"
+                  rel="noopener"
+                  >github.com/monikasharma2204</a
+                >
+              </li>
+              <li>
+                <span class="contact__key">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/monika-sharmaa/"
+                  target="_blank"
+                  rel="noopener"
+                  >linkedin.com/in/monika-sharmaa</a
+                >
+              </li>
+              <li>
+                <span class="contact__key">Location</span>
+                <span>Jaipur, Rajasthan, India</span>
+              </li>
+            </ul>
+          </div>
+
+          <form class="card form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input
+                id="f-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                minlength="2"
+                aria-describedby="err-name"
+              />
+              <p class="field__error" id="err-name" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input
+                id="f-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                aria-describedby="err-email"
+              />
+              <p class="field__error" id="err-email" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-msg">Message</label>
+              <textarea
+                id="f-msg"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+                aria-describedby="err-msg"
+              ></textarea>
+              <p class="field__error" id="err-msg" aria-live="polite"></p>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">
+              Send Message
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14M13 6l6 6-6 6"
+                />
+              </svg>
+            </button>
+            <p class="form__note">
+              This opens your email app with the message filled in — nothing is
+              stored on this site.
+            </p>
+            <p
+              class="form__status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div>
+          <p class="footer__name">
+            © <span id="year">2026</span> Monika Sharma
+          </p>
+          <p class="footer__role">Full-Stack Developer</p>
+        </div>
+        <ul class="footer__links">
+          <li>
+            <a
+              href="https://github.com/monikasharma2204"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/monika-sharmaa/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="mailto:monika779803@gmail.com">Email</a></li>
+        </ul>
+        <a href="#home" class="footer__top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 19V5m0 0-6 6m6-6 6 6"
+        />
+      </svg>
+    </button>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
