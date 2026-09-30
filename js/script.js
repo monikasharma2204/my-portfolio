@@ -17,7 +17,7 @@ const PROJECT_LINKS = {
 
 // Put your PDF in assets/resume/ and set the path, e.g.
 // "assets/resume/Monika_Sharma_Resume.pdf"
-const RESUME_URL = "";
+const RESUME_URL = "assets/resume/Monika Sharma.pdf";
 
 /* -------------------------------------------------------------------------- */
 
@@ -26,7 +26,9 @@ const RESUME_URL = "";
 
   const root = document.documentElement;
   const body = document.body;
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   /* ---------- Loader + hero entrance ---------- */
   body.classList.add("is-loading");
@@ -40,7 +42,9 @@ const RESUME_URL = "";
     body.classList.remove("is-loading");
     body.classList.add("is-ready");
   }
-  window.addEventListener("load", () => setTimeout(start, prefersReducedMotion ? 0 : 350));
+  window.addEventListener("load", () =>
+    setTimeout(start, prefersReducedMotion ? 0 : 350),
+  );
   setTimeout(start, 2500); // never hold the page hostage to a slow font/CDN
 
   /* ---------- Theme ---------- */
@@ -53,19 +57,34 @@ const RESUME_URL = "";
       window.setTimeout(() => root.classList.remove("theme-transition"), 450);
     }
     root.setAttribute("data-theme", theme);
-    if (metaTheme) metaTheme.setAttribute("content", theme === "dark" ? "#0a0a0a" : "#ffffff");
+    if (metaTheme)
+      metaTheme.setAttribute(
+        "content",
+        theme === "dark" ? "#0a0a0a" : "#ffffff",
+      );
     if (themeBtn) {
-      themeBtn.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
+      themeBtn.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light theme" : "Switch to dark theme",
+      );
     }
   }
 
-  applyTheme(root.getAttribute("data-theme") === "light" ? "light" : "dark", false);
+  applyTheme(
+    root.getAttribute("data-theme") === "light" ? "light" : "dark",
+    false,
+  );
 
   if (themeBtn) {
     themeBtn.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      const next =
+        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
       applyTheme(next, true);
-      try { localStorage.setItem("theme", next); } catch (e) { /* storage blocked: theme still switches */ }
+      try {
+        localStorage.setItem("theme", next);
+      } catch (e) {
+        /* storage blocked: theme still switches */
+      }
     });
   }
 
@@ -95,12 +114,16 @@ const RESUME_URL = "";
 
   /* ---------- Project screenshot galleries ---------- */
   document.querySelectorAll(".project[data-shots]").forEach((project) => {
-    const shots = project.dataset.shots.split(",").map((s) => s.trim()).filter(Boolean);
+    const shots = project.dataset.shots
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
     if (!shots.length) return;
 
     const gallery = project.querySelector(".gallery");
     const mock = project.querySelector(".mock");
-    const name = project.querySelector(".project__title")?.textContent.trim() || "Project";
+    const name =
+      project.querySelector(".project__title")?.textContent.trim() || "Project";
 
     const main = document.createElement("img");
     main.className = "gallery__main";
@@ -129,7 +152,9 @@ const RESUME_URL = "";
             main.alt = `${name} screenshot ${i + 1} of ${shots.length}`;
             main.style.opacity = "1";
           }, 180);
-          thumbs.querySelectorAll("button").forEach((x) => x.removeAttribute("aria-current"));
+          thumbs
+            .querySelectorAll("button")
+            .forEach((x) => x.removeAttribute("aria-current"));
           b.setAttribute("aria-current", "true");
         });
         thumbs.appendChild(b);
@@ -138,7 +163,14 @@ const RESUME_URL = "";
     }
 
     // Only swap out the mockup once the first image actually loads.
-    main.addEventListener("load", () => { mock.hidden = true; gallery.hidden = false; }, { once: true });
+    main.addEventListener(
+      "load",
+      () => {
+        mock.hidden = true;
+        gallery.hidden = false;
+      },
+      { once: true },
+    );
   });
 
   /* ---------- Navbar: scrolled state + mobile menu ---------- */
@@ -160,24 +192,35 @@ const RESUME_URL = "";
     navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     body.style.overflow = open ? "hidden" : "";
   }
-  navToggle.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
-  document.querySelectorAll("#nav-menu a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  navToggle.addEventListener("click", () =>
+    setMenu(!nav.classList.contains("is-open")),
+  );
+  document
+    .querySelectorAll("#nav-menu a")
+    .forEach((a) => a.addEventListener("click", () => setMenu(false)));
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && nav.classList.contains("is-open")) {
       setMenu(false);
       navToggle.focus();
     }
   });
-  window.matchMedia("(min-width: 901px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
+  window.matchMedia("(min-width: 901px)").addEventListener("change", (e) => {
+    if (e.matches) setMenu(false);
+  });
 
   toTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
   });
 
   /* ---------- Active section highlight ---------- */
   const links = [...document.querySelectorAll(".nav__link")];
   const byId = new Map(links.map((l) => [l.getAttribute("href").slice(1), l]));
-  const sections = [...byId.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+  const sections = [...byId.keys()]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
 
   function setActive(id) {
     links.forEach((l) => {
@@ -190,36 +233,51 @@ const RESUME_URL = "";
 
   // A thin band across the upper-middle of the viewport decides which section is "current".
   const spy = new IntersectionObserver(
-    (entries) => entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
-    { rootMargin: "-35% 0px -60% 0px" }
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) setActive(e.target.id);
+      }),
+    { rootMargin: "-35% 0px -60% 0px" },
   );
   sections.forEach((s) => spy.observe(s));
 
   // The last section can be too short to reach the band — handle page bottom explicitly.
-  window.addEventListener("scroll", () => {
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) setActive("contact");
-  }, { passive: true });
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4
+      )
+        setActive("contact");
+    },
+    { passive: true },
+  );
 
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll(".reveal");
 
   // Stagger siblings that reveal together (e.g. skill cards, stat cards).
   revealEls.forEach((el) => {
-    const group = [...el.parentElement.children].filter((c) => c.classList.contains("reveal"));
+    const group = [...el.parentElement.children].filter((c) =>
+      c.classList.contains("reveal"),
+    );
     const i = group.indexOf(el);
-    if (i > 0) el.style.setProperty("--reveal-delay", `${Math.min(i, 6) * 70}ms`);
+    if (i > 0)
+      el.style.setProperty("--reveal-delay", `${Math.min(i, 6) * 70}ms`);
   });
 
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   } else {
     const revealer = new IntersectionObserver(
-      (entries, obs) => entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add("is-visible");
-        obs.unobserve(e.target);
-      }),
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      (entries, obs) =>
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add("is-visible");
+          obs.unobserve(e.target);
+        }),
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
     revealEls.forEach((el) => revealer.observe(el));
   }
@@ -228,7 +286,10 @@ const RESUME_URL = "";
   function countUp(el) {
     const target = Number(el.dataset.count);
     if (!Number.isFinite(target)) return;
-    if (prefersReducedMotion) { el.textContent = String(target); return; }
+    if (prefersReducedMotion) {
+      el.textContent = String(target);
+      return;
+    }
     const duration = 1400;
     const t0 = performance.now();
     const tick = (now) => {
@@ -244,12 +305,13 @@ const RESUME_URL = "";
   const counters = document.querySelectorAll("[data-count]");
   if ("IntersectionObserver" in window) {
     const counterObs = new IntersectionObserver(
-      (entries, obs) => entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        countUp(e.target);
-        obs.unobserve(e.target);
-      }),
-      { threshold: 0.6 }
+      (entries, obs) =>
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          countUp(e.target);
+          obs.unobserve(e.target);
+        }),
+      { threshold: 0.6 },
     );
     counters.forEach((c) => counterObs.observe(c));
   }
@@ -289,8 +351,14 @@ const RESUME_URL = "";
 
   const rules = {
     name: (v) => (v.length < 2 ? "Please enter your name." : ""),
-    email: (v) => (!v ? "Please enter your email." : !emailPattern.test(v) ? "That email doesn't look right." : ""),
-    message: (v) => (v.length < 10 ? "Please write a message (at least 10 characters)." : ""),
+    email: (v) =>
+      !v
+        ? "Please enter your email."
+        : !emailPattern.test(v)
+          ? "That email doesn't look right."
+          : "",
+    message: (v) =>
+      v.length < 10 ? "Please write a message (at least 10 characters)." : "",
   };
 
   function validateField(input) {
@@ -304,9 +372,12 @@ const RESUME_URL = "";
   }
 
   form.querySelectorAll("input, textarea").forEach((input) => {
-    input.addEventListener("blur", () => { if (input.value) validateField(input); });
+    input.addEventListener("blur", () => {
+      if (input.value) validateField(input);
+    });
     input.addEventListener("input", () => {
-      if (input.closest(".field").classList.contains("has-error")) validateField(input);
+      if (input.closest(".field").classList.contains("has-error"))
+        validateField(input);
     });
   });
 
@@ -322,9 +393,9 @@ const RESUME_URL = "";
     const data = Object.fromEntries(new FormData(form));
     const subject = `Portfolio enquiry from ${data.name.trim()}`;
     const bodyText = `${data.message.trim()}\n\n— ${data.name.trim()}\n${data.email.trim()}`;
-    window.location.href =
-      `mailto:${EMAIL_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-    statusEl.textContent = "Your email app should open with the message ready to send.";
+    window.location.href = `mailto:${EMAIL_TO}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+    statusEl.textContent =
+      "Your email app should open with the message ready to send.";
   });
 
   /* ---------- Footer year ---------- */
@@ -344,7 +415,12 @@ const RESUME_URL = "";
     let rgb = "255,255,255";
 
     const readColor = () => {
-      rgb = getComputedStyle(root).getPropertyValue("--dot").trim().split(/\s+/).join(",") || "255,255,255";
+      rgb =
+        getComputedStyle(root)
+          .getPropertyValue("--dot")
+          .trim()
+          .split(/\s+/)
+          .join(",") || "255,255,255";
     };
 
     function resize() {
@@ -370,8 +446,10 @@ const RESUME_URL = "";
       for (const d of dots) {
         d.x += d.vx;
         d.y += d.vy;
-        if (d.x < -4) d.x = w + 4; else if (d.x > w + 4) d.x = -4;
-        if (d.y < -4) d.y = h + 4; else if (d.y > h + 4) d.y = -4;
+        if (d.x < -4) d.x = w + 4;
+        else if (d.x > w + 4) d.x = -4;
+        if (d.y < -4) d.y = h + 4;
+        else if (d.y > h + 4) d.y = -4;
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${rgb},${d.a})`;
@@ -380,14 +458,28 @@ const RESUME_URL = "";
       raf = requestAnimationFrame(frame);
     }
 
-    const play = () => { if (!running) { running = true; raf = requestAnimationFrame(frame); } };
-    const pause = () => { running = false; cancelAnimationFrame(raf); };
+    const play = () => {
+      if (!running) {
+        running = true;
+        raf = requestAnimationFrame(frame);
+      }
+    };
+    const pause = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
 
     readColor();
     resize();
     let resizeTimer;
-    window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(resize, 150); });
-    new MutationObserver(readColor).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    });
+    new MutationObserver(readColor).observe(root, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
 
     // Only animate while the hero is on screen and the tab is visible.
     let heroOnScreen = true;
@@ -395,6 +487,8 @@ const RESUME_URL = "";
       heroOnScreen = e.isIntersecting;
       heroOnScreen && !document.hidden ? play() : pause();
     }).observe(hero);
-    document.addEventListener("visibilitychange", () => (document.hidden || !heroOnScreen ? pause() : play()));
+    document.addEventListener("visibilitychange", () =>
+      document.hidden || !heroOnScreen ? pause() : play(),
+    );
   }
 })();
